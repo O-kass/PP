@@ -64,3 +64,15 @@ class Portfolio(models.Model):
 
     def __str__(self):
         return f'Portfolio {self.id}'
+
+#Projects SECTION
+
+class Projects(models.Model):
+    heading = models.CharField(max_length=50)
+    description = models.TextField(blank=False)
+    profile_img = models.ImageField(upload_to='profile/')
+
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.heading
