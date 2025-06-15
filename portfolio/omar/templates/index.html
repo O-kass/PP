@@ -19,7 +19,7 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav__logo">Jhon Doe</a>
+                    <a href="#" class="nav__logo">{{ home.name }}</a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
@@ -29,6 +29,7 @@
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="#project" class="nav__link">Projects</a></li>
                     </ul>
                 </div>
 
@@ -42,13 +43,13 @@
             <!--===== HOME =====-->
             <section class="home" id="home">
                 <div class="home__container bd-grid">
-                    <h1 class="home__title"><span>HE</span><br>LLO.</h1>
+                    <h1 class="home__title"><span>{{ home.greetings_1 }}</span><br>{{ home.greetings_2 }}</h1>
 
                     <div class="home__scroll">
                         <a href="#about" class="home__scroll-link"><i class='bx bx-up-arrow-alt' ></i>Scroll down</a>
                     </div>
 
-                    <img src="{% static 'assets/img/perfil.png' %}" alt="" class="home__img">
+                    <img src="{{ home.picture.url  }}" alt="" class="home__img">
                 </div>
             </section>
             
@@ -58,13 +59,13 @@
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="{% static 'assets/img/perfil.png' %}" alt="">
+                        <img src="{{ about.profile_img.url   }}" alt="">
                     </div>
 
                     <div>
-                        <h2 class="about__subtitle">I'am Jhon Doe</h2>
-                        <span class="about__profession">Web designer</span>
-                        <p class="about__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci consectetur, architecto quas fugiat, iste inventore facere repellendus delectus id, vitae blanditiis.</p>
+                        <h2 class="about__subtitle">{{ about.heading}}</h2>
+                        <span class="about__profession">{{ about.career }}</span>
+                        <p class="about__text">{{ about.description }}</p>
 
                         <div class="about__social">
                             <a href="#" class="about__social-icon"><i class='bx bxl-linkedin' ></i></a>
@@ -81,18 +82,14 @@
 
                 <div class="skills__container bd-grid">
                     <div class="skills__box">
-                        <h3 class="skills__subtitle">Development</h3>
-                        <span class="skills__name">Html</span>
-                        <span class="skills__name">Css</span>
-                        <span class="skills__name">Javascript</span>
-                        <span class="skills__name">Scss</span>
-                        <span class="skills__name">React</span>
-                        <span class="skills__name">Vue</span>
-                        
-                        <h3 class="skills__subtitle">Design</h3>
-                        <span class="skills__name">Figma</span>
-                        <span class="skills__name">Adobe XD</span>
-                        <span class="skills__name">Photoshop</span>
+                        {% for category in categories %}
+                        <h3 class="skills__subtitle">{{category.name}}</h3>
+                            {% for skills in category.skills_set.all %}
+
+                                <span class="skills__name">{{skills.skill_name}}</span>
+                            {% endfor %}
+                        {% endfor %}
+
                     </div>
 
                     <div class="skills__img">
@@ -106,52 +103,22 @@
                 <h2 class="section-title">Portfolio</h2>
 
                 <div class="portfolio__container bd-grid">
+                    {% for portfolio in portfolios %}
+
                     <div class="portfolio__img">
-                        <img src="assets/img/work1.jpg" alt="">
+                        <img src="{{ portfolio.image.url }}" alt="">
 
                         <div class="portfolio__link">
-                            <a href="#" class="portfolio__link-name">View details</a>
+                            <a href="{{ portfolio.link }}" class="portfolio__link-name">View details</a>
                         </div>
                     </div>
-                    <div class="portfolio__img">
-                        <img src="{% static 'assets/img/work2.jpg' %}" alt="">
 
-                        <div class="portfolio__link">
-                            <a href="#" class="portfolio__link-name">View details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio__img">
-                        <img src="{% static 'assets/img/work3.jpg' %}" alt="">
+                    {% endfor %}
 
-                        <div class="portfolio__link">
-                            <a href="#" class="portfolio__link-name">View details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio__img">
-                        <img src="{% static 'assets/img/work4.jpg' %}" alt="">
-
-                        <div class="portfolio__link">
-                            <a href="#" class="portfolio__link-name">View details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio__img">
-                        <img src="{% static 'assets/img/work5.jpg' %}" alt="">
-
-                        <div class="portfolio__link">
-                            <a href="#" class="portfolio__link-name">View details</a>
-                        </div>
-                    </div>
-                    <div class="portfolio__img">
-                        <img src="{% static 'assets/img/work6.jpg' %}" alt="">
-
-                        <div class="portfolio__link">
-                            <a href="#" class="portfolio__link-name">View details</a>
-                        </div>
-                    </div>
                 </div>
-            </section>
 
-            <!--===== CONTACT =====-->
+            </section>
+ <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
 
@@ -159,15 +126,22 @@
                     <div class="contact__info">
                         <h3 class="contact__subtitle">EMAIL</h3>
                         <span class="contact__text">info.mail.com</span>
-
+<!--
                         <h3 class="contact__subtitle">PHONE</h3>
                         <span class="contact__text">+20 999-999</span>
 
                         <h3 class="contact__subtitle">ADRESS</h3>
-                        <span class="contact__text">My contry</span>
+                        <span class="contact__text">My contry</span> -->
                     </div>
 
-                    <form action="" class="contact__form">
+                    <div class="contact__info">
+
+                        <h3 class="contact__subtitle">PHONE</h3>
+                        <span class="contact__text">+20 999-999</span>
+
+                    </div>
+
+                    <!-- <form action="" class="contact__form">
                         <div class="contact__inputs">
                             <input type="text" placeholder="Name" class="contact__input">
                             <input type="mail" placeholder="Email" class="contact__input">
@@ -176,7 +150,26 @@
                         <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
 
                         <input type="submit" value="Enviar" class="contact__button">
-                    </form>
+                    </form> -->
+                </div>
+            </section>
+
+            <section class="projects section" id="project">
+                <h2 class="section-title">Projects</h2>
+
+                <div class="project__container bd-grid">
+                    <div class="project__img">
+                        <img src="{{ project.profile_img.url   }}" alt="">
+                    </div>
+
+                    <div>
+                        <h2 class="project__subtitle">{{ project.heading}}</h2>
+                        <p class="project__text">{{ project.description }}</p>
+
+                        <div class="project__social">
+                            <a href="#" class="about__social-icon"><i class='bx bxl-github' ></i></a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -199,7 +192,7 @@
                         <li><a href="#Contact" class="footer__link">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer__data">
                     <h2 class="footer__title">FOLLOW</h2>
                     <a href="#" class="footer__social"><i class='bx bxl-facebook' ></i></a>
