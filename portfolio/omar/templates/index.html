@@ -27,7 +27,7 @@
                         <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+<!--                        <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>-->
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                         <li class="nav__item"><a href="#project" class="nav__link">Projects</a></li>
                     </ul>
@@ -98,26 +98,26 @@
                 </div>
             </section>
 
-            <!--===== PORTFOLIO =====-->
-            <section class="portfolio section" id="portfolio">
-                <h2 class="section-title">Portfolio</h2>
+<!--            &lt;!&ndash;===== PORTFOLIO =====&ndash;&gt;-->
+<!--            <section class="portfolio section" id="portfolio">-->
+<!--                <h2 class="section-title">Portfolio</h2>-->
 
-                <div class="portfolio__container bd-grid">
-                    {% for portfolio in portfolios %}
+<!--                <div class="portfolio__container bd-grid">-->
+<!--                    {% for portfolio in portfolios %}-->
 
-                    <div class="portfolio__img">
-                        <img src="{{ portfolio.image.url }}" alt="">
+<!--                    <div class="portfolio__img">-->
+<!--                        <img src="{{ portfolio.image.url }}" alt="">-->
 
-                        <div class="portfolio__link">
-                            <a href="{{ portfolio.link }}" class="portfolio__link-name">View details</a>
-                        </div>
-                    </div>
+<!--                        <div class="portfolio__link">-->
+<!--                            <a href="{{ portfolio.link }}" class="portfolio__link-name">View details</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    {% endfor %}
+<!--                    {% endfor %}-->
 
-                </div>
+<!--                </div>-->
 
-            </section>
+<!--            </section>-->
  <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
@@ -154,32 +154,35 @@
                 </div>
             </section>
 
-            <section class="projects section" id="project">
-                <h2 class="section-title">Projects</h2>
+            <!--===== PROJECTS  =====-->
+             <section class="project section" id="project">
+                <h2 class="section-title">Project</h2>
 
                 <div class="project__container bd-grid">
-                    <div class="project__img">
-                        <img src="{{ project.profile_img.url   }}" alt="">
-                    </div>
+                   <div class="project__content">
+                     <h2 class="project__subtitle">{{ project.heading }}</h2>
+                     <p class="project__text">{{ project.description }}</p>
 
-                    <div>
-                        <h2 class="project__subtitle">{{ project.heading}}</h2>
-                        <p class="project__text">{{ project.description }}</p>
+                     <div class="project__social">
+                        <a href="#" class="project__social-icon"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" class="project__social-icon"><i class='bx bxl-github'></i></a>
+                     </div>
+                   </div>
 
-                        <div class="project__social">
-                            <a href="#" class="about__social-icon"><i class='bx bxl-github' ></i></a>
-                        </div>
-                    </div>
+                   <div class="project__img">
+                    <img src="{{ project.profile_img2.url }}" alt="{{ project.heading }}">
+                   </div>
                 </div>
-            </section>
+             </section>
+
         </main>
 
         <!--===== FOOTER =====-->
         <footer class="footer section">
             <div class="footer__container bd-grid">
                 <div class="footer__data">
-                    <h2 class="footer__title">JHON DOE</h2>
-                    <p class="footer__text">I'm Jhon Doe and this is my personal website</p>
+                    <h2 class="footer__title">YO</h2>
+                    <p class="footer__text">Mon website personnal</p>
                 </div>
 
                 <div class="footer__data">
@@ -190,6 +193,7 @@
                         <li><a href="#skills" class="footer__link">Skills</a></li>
                         <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
                         <li><a href="#Contact" class="footer__link">Contact</a></li>
+                        <li><a href="#project" class="footer__link">Project</a></li>
                     </ul>
                 </div>
 
@@ -199,6 +203,8 @@
                     <a href="#" class="footer__social"><i class='bx bxl-instagram' ></i></a>
                     <a href="#" class="footer__social"><i class='bx bxl-twitter' ></i></a>
                 </div>
+
+
 
 
             </div>

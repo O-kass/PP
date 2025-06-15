@@ -75,6 +75,11 @@ sr.reveal('.contact__text', {interval: 200})
 sr.reveal('.contact__input', {delay: 400})
 sr.reveal('.contact__button', {delay: 600})
 
+/*SCROLL PROJECT*/
+sr.reveal('.project__img', {delay: 500})
+sr.reveal('.project__subtitle', {delay: 300})
+sr.reveal('.project__text', {delay: 500})
+sr.reveal('.project__social-icon', {delay: 600, interval: 200})
 
 
 

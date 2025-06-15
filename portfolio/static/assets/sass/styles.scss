@@ -365,6 +365,49 @@ img{
         cursor: pointer;
     }
 }
+
+/* ===== PROJECTS =====*/
+.project{
+    &__container{
+        justify-items: center;
+        row-gap: 2rem;
+        text-align: center;
+    }
+    &__img{
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+        width: 120px;
+        height: 120px;
+        background-color: var(--first-color);
+        border-radius: 50%;
+        overflow: hidden;
+
+        & img{
+            width: 100px;
+        }
+    }
+    &__subtitle{
+        font-size: var(--h2-font-size);
+        color: var(--first-color);
+        margin-bottom: var(--mb-1);
+    }
+    &__text{
+        margin-bottom: var(--mb-4);
+    }
+
+    &__social{
+        &-icon{
+            font-size: 1.4rem;
+            margin: 0 var(--mb-1);
+
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+    }
+}
+
 /* ===== FOOTER=====*/
 .footer{
     background-color: var(--dark-color);
@@ -496,6 +539,24 @@ img{
             width: 380px;
         }
     }
+
+    .project{
+        &__container{
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            text-align: initial;
+            padding: 4rem 0;
+        }
+        &__img{
+            width: 200px;
+            height: 200px;
+
+            & img{
+                width: 165px;
+            }
+        }
+    }
+
     .footer{
         &__container{
             grid-template-columns: repeat(3,1fr);

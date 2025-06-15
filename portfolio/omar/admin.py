@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Home, About, Profile, Category, Skills, Portfolio
+from .models import Home, About, Profile, Category, Skills, Portfolio, Project
 
 
 # Home
@@ -29,5 +29,14 @@ class CategoryAdmin(admin.ModelAdmin):
     ]
 
 
-# Portfolio
-admin.site.register(Portfolio)
+# # Portfolio
+# admin.site.register(Portfolio)
+
+#Projects
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+     inlines = [
+        ProfileInline,
+    ]
+
