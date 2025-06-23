@@ -3,6 +3,7 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,6 +12,12 @@
 
         <!-- ===== BOX ICONS ===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ==== BUTTONS ==== -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">Add commentMore actions
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
 
         <title>Portfolio responsive complete</title>
     </head>
@@ -162,18 +169,28 @@
                    <div class="project__content">
                      <h2 class="project__subtitle">{{ project.heading }}</h2>
                      <p class="project__text">{{ project.description }}</p>
-
-                     <div class="project__social">
-                        <a href="#" class="project__social-icon"><i class='bx bxl-linkedin'></i></a>
-                        <a href="#" class="project__social-icon"><i class='bx bxl-github'></i></a>
-                     </div>
                    </div>
 
                    <div class="project__img">
                     <img src="{{ project.profile_img2.url }}" alt="{{ project.heading }}">
                    </div>
+
+                    <div class="project__social">
+                        <a href="#" class="project__social-icon"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" class="project__social-icon"><i class='bx bxl-github'></i></a>
+                     </div>
                 </div>
+
+                 <div class="container text-center">
+		        <div class="btn-group-vertical w-75">
+                    <form action ="/load_pyfile_function">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-bottom: 50px; border-radius: 20px !important">Try out</button>
+            		</form>
+		        </div>
+	        </div>
              </section>
+
+
 
         </main>
 
