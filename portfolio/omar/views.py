@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Home, About, Profile, Category, Skills, Portfolio, Project
+from django.http import HttpResponse
 
 
 def index(request):
@@ -31,3 +32,7 @@ def index(request):
     }
 
     return render(request, 'index.html', context)
+
+def load_pyfile_function(request):
+
+    return render(request, 'game1.html')
